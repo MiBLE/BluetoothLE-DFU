@@ -20,12 +20,14 @@
 		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
 			<Capability Name="ID_CAP_NETWORKING" />
 			<Capability Name="ID_CAP_IDENTITY_DEVICE" />
+        </config-file>
+		<config-file target="Package.appxmanifest" parent="/Package/Capabilities">
 			<m2:DeviceCapability Name="bluetooth.genericAttributeProfile">
 				<m2:Device Id="any">
 					<m2:Function Type="serviceId:00001530-1212-efde-1523-785feabcd123"/>
 				</m2:Device>
 			</m2:DeviceCapability>
-        </config-file>
+		</config-file>
         <source-file src="src/wp8/BluetoothLeDfuPlugin.cs" />
     </platform>
     <info>For more info:http://citozin.com/</info>
