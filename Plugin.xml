@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.MiBLE.BluetoothLE.dfu" version="0.0.1">
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <name>Bluetooth LE DFU</name>
+    <description>Use the Bluetooth Low Energy DFU plugin to update firmware on your new Bluetooth devices like heart rate monitors, thermometers, etc...</description>
+    <author>Mihail Konovalov</author>
+    <keywords>bluetooth,low energy,smart</keywords>
+    <license>Apache 2.0 License</license>
+    <js-module src="www/bluetoothledfu.js" name="BluetoothLeDfu">
+        <clobbers target="window.bluetoothle" />
+    </js-module>
+	<platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BluetoothLePlugin">
+                <param name="wp-package" value="BluetoothLePlugin" />
+            </feature>
+        </config-file>
+		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+			<Capability Name="ID_CAP_NETWORKING" />
+			<Capability Name="ID_CAP_IDENTITY_DEVICE" />
+			<m2:DeviceCapability Name="bluetooth.genericAttributeProfile">
+				<m2:Device Id="any">
+					<m2:Function Type="serviceId:1803"/>
+				</m2:Device>
+			</m2:DeviceCapability>
+        </config-file>
+        <source-file src="src/wp/BluetoothLePlugin.cs" />
+    </platform>
+    <info>For more info: http://randdusing.com/</info>
+</plugin>
