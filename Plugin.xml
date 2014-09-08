@@ -13,8 +13,8 @@
     </js-module>
 	<platform name="wp8">
         <config-file target="config.xml" parent="/*">
-            <feature name="BluetoothLePlugin">
-                <param name="wp-package" value="BluetoothLePlugin" />
+            <feature name="BluetoothLeDfuPlugin">
+                <param name="wp-package" value="BluetoothLeDfuPlugin" />
             </feature>
         </config-file>
 		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
